@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkidSense - Like Gamesense</title>
+  <style>
+    /* Rainbow line animation */
+    @keyframes rainbow {
+      0%   { background-position: 0%   50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0%   50%; }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000; /* black background */
+      font-family: Arial, sans-serif;
+      color: #fff;
+      height: 100vh; /* so we can center vertically */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Thick rainbow line at the top */
+    #rainbow-line {
+      width: 100%;
+      height: 12px;
+      background: linear-gradient(
+        90deg,
+        #ff0000,
+        #ffa500,
+        #ffff00,
+        #008000,
+        #0000ff,
+        #4b0082,
+        #ee82ee
+      );
+      background-size: 800% 800%;
+      animation: rainbow 6s linear infinite;
+      flex-shrink: 0;
+    }
+
+    /* Main wrapper (below rainbow) to center everything */
+    #content {
+      flex: 1; 
+      display: flex;
+      justify-content: center; /* center horizontally */
+      align-items: center;     /* center vertically */
+      gap: 40px;               /* space between left & right columns */
+      padding: 0 20px;         /* optional horizontal page padding */
+      box-sizing: border-box;
+    }
+
+    /* Left side: the 600x600 menu picture (no border or minimal) */
+    #left-side img {
+      width: 600px;
+      height: 600px;
+      object-fit: cover;
+      /* border: 2px solid #444;  <-- remove or uncomment if you want a thin border */
+      /* border: none;  <-- if you want no border at all */
+    }
+
+    /* Right side for text & buttons */
+    #right-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 400px; /* so text doesn’t stretch too wide */
+    }
+
+    #right-side h1 {
+      margin: 0 0 10px;
+      font-size: 2em;
+      color: #fff;
+    }
+
+    #right-side p {
+      margin: 0 0 20px;
+      line-height: 1.5;
+    }
+
+    /* Buttons */
+    .my-button {
+      display: inline-block;
+      background-color: #222;
+      color: #fff;
+      padding: 10px 20px;
+      margin: 0 0 10px; /* bottom spacing */
+      border: 2px solid #444;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .my-button:hover {
+      background-color: #444;
+      color: #ddd;
+    }
+  </style>
+  <script>
+    // Simple script placeholders
+    function onDownload() {
+      alert("Download button clicked!");
+    }
+    function onGetKey() {
+      alert("Get Key button clicked!");
+    }
+    function onDiscord() {
+      alert("Discord button clicked!");
+    }
+  </script>
+</head>
+<body>
+  <!-- Thick Rainbow Line at Top -->
+  <div id="rainbow-line"></div>
+
+  <!-- Centered Content Section -->
+  <div id="content">
+    <div id="left-side">
+      <img src="menu.png" alt="Menu Screenshot" />
+    </div>
+
+    <div id="right-side">
+      <h1>SkidHook.cc</h1>
+      <p>
+        Welcome to SkidHook.cc! This is a very cool paste in
+        retro 2017 csgo style, offering sleek design and functionality.
+      </p>
+
+      <a href="#" class="my-button" onclick="onDownload()">Download</a>
+      <a href="#" class="my-button" onclick="onGetKey()">Get Key</a>
+      <a href="#" class="my-button" onclick="onDiscord()">Discord</a>
+    </div>
+  </div>
+</body>
+</html>
